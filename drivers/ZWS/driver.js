@@ -1,13 +1,13 @@
 "use strict";
 
-const path			= require('path');
-const ZwaveDriver	= require('homey-zwavedriver');
+const path = require('path');
+const ZwaveDriver = require('homey-zwavedriver');
 
 // http://www.fakro.nl/producten/bedieningssystemen/elektrisch/bedienbare-apparaten/kettingmotoren/
 
 module.exports = new ZwaveDriver(path.basename(__dirname), {
     capabilities: {
-        windowopenings_state: {
+        windowcoverings_state: {
             command_class: 'COMMAND_CLASS_SWITCH_BINARY',
             command_get: 'SWITCH_BINARY_GET',
             command_set: 'SWITCH_BINARY_SET',
@@ -51,6 +51,6 @@ module.exports = new ZwaveDriver(path.basename(__dirname), {
         }
     },
     settings: {
-        
+
     }
 });
